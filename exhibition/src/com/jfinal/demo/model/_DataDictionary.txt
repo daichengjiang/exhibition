@@ -1,0 +1,40 @@
+Table: sys_classify
+--------------+--------------+------+-----+---------+---------
+ Field        | Type         | Null | Key | Default | Remarks 
+--------------+--------------+------+-----+---------+---------
+ classifyId   | INT(10)      | NO   | PRI |         |         
+ userId       | INT(10)      | NO   |     |         |         
+ classifyName | VARCHAR(255) | NO   |     |         |         
+ parentName   | VARCHAR(255) | YES  |     |         |         
+ status       | VARCHAR(10)  | NO   |     |         |         
+ createTime   | DATETIME(19) | NO   |     |         |         
+--------------+--------------+------+-----+---------+---------
+
+Table: sys_picture
+------------+--------------+------+-----+---------+---------
+ Field      | Type         | Null | Key | Default | Remarks 
+------------+--------------+------+-----+---------+---------
+ picId      | INT(10)      | NO   | PRI |         |         
+ classifyId | INT(10)      | YES  |     |         |         
+ title      | VARCHAR(255) | YES  |     |         |         
+ url        | VARCHAR(255) | YES  |     |         |         
+ type       | INT(10)      | YES  |     |         |         
+ createTime | DATETIME(19) | YES  |     |         |         
+------------+--------------+------+-----+---------+---------
+
+Table: sys_user
+-------------+--------------+------+-----+---------+---------
+ Field       | Type         | Null | Key | Default | Remarks 
+-------------+--------------+------+-----+---------+---------
+ id          | INT(10)      | NO   | PRI |         | 用户ID    
+ username    | VARCHAR(255) | NO   |     |         | 用户名     
+ password    | VARCHAR(255) | NO   |     |         | 密码      
+ phone       | VARCHAR(11)  | YES  |     |         | 手机号码    
+ email       | VARCHAR(50)  | YES  |     |         | 电子邮箱    
+ create_time | DATETIME(19) | NO   |     |         | 创建时间    
+ status      | VARCHAR(1)   | NO   |     |         | 状态      
+ nickname    | VARCHAR(30)  | YES  |     |         | 昵称      
+ icon        | VARCHAR(255) | YES  |     |         | 头像      
+ lastIp      | VARCHAR(255) | YES  |     |         | 最后一次登录IP
+-------------+--------------+------+-----+---------+---------
+

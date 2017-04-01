@@ -2,7 +2,7 @@ package com.jfinal.demo.routes;
 
 import com.jfinal.config.Routes;
 import com.jfinal.demo.controller.IndexController;
-import com.jfinal.demo.controller.UserController;
+import com.jfinal.demo.controller.MgrController;
 
 public class FrontRoutes extends Routes {
 
@@ -11,7 +11,7 @@ public class FrontRoutes extends Routes {
 		//项目根访问路径
 		add("/", IndexController.class);
 		
-		add("/user", UserController.class);
+		add("/user", MgrController.class);
 	}
 
 }

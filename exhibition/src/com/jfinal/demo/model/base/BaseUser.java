@@ -73,4 +73,20 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return get("nickname");
 	}
 
+	public void setIcon(java.lang.String icon) {
+		set("icon", icon);
+	}
+
+	public java.lang.String getIcon() {
+		return get("icon");
+	}
+
+	public void setLastIp(java.lang.String lastIp) {
+		set("lastIp", lastIp);
+	}
+
+	public java.lang.String getLastIp() {
+		return get("lastIp");
+	}
+
 }

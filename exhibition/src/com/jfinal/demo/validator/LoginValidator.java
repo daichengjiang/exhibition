@@ -12,16 +12,16 @@ public class LoginValidator extends Validator {
 
 	@Override
 	protected void validate(Controller c) {
-		validateRequiredString(0, "user.username", "用户名不能为空");
-		validateRequiredString(1, "user.password", "密码不能为空");
+		validateRequiredString("username", "message", "用户名不能为空");
+		validateRequiredString("password", "message", "密码不能为空");
+		validateRequiredString("captcha", "message", "验证码不能为空");
 		
 		
 	}
 
 	@Override
 	protected void handleError(Controller c) {
-		c.keepPara("user.username");
-		c.render("/login.jsp");
+		c.render("login.jsp");
 	}
 
 }

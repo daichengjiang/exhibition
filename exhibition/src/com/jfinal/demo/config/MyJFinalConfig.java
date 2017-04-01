@@ -7,14 +7,14 @@ import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.demo.controller.IndexController;
-import com.jfinal.demo.controller.UserController;
+import com.jfinal.demo.controller.MgrController;
 import com.jfinal.demo.handler.ResourceHandler;
 import com.jfinal.demo.interceptor.AuthInterceptor;
 import com.jfinal.demo.model._MappingKit;
-import com.jfinal.demo.routes.FrontRoutes;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.jfinal.render.ViewType;
 
 public class MyJFinalConfig extends JFinalConfig{
@@ -40,13 +40,14 @@ public class MyJFinalConfig extends JFinalConfig{
 		me.add("/", IndexController.class);
 		
 		//第三个参数为视图存放路径
-		me.add("/user", UserController.class,"/WEB-INF/mgr");
+		me.add("/mgr", MgrController.class,"WEB-INF/mgr/");
 	}
 	
 	/**
 	 * 此方法用于：配置JFinal的Plugin（插件）
 	 */
 	public void configPlugin(Plugins me){
+		//配置c3p0插件
 		loadPropertyFile("jdbc.properties");
 		C3p0Plugin c3p0Plugin = new C3p0Plugin(
 				getProperty("jdbcUrl"),
@@ -57,6 +58,9 @@ public class MyJFinalConfig extends JFinalConfig{
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(c3p0Plugin);
 		me.add(arp);
 		_MappingKit.mapping(arp);
+		
+		//配置缓存插件
+		me.add(new EhCachePlugin());
 	}
 	
 	/**
@@ -72,7 +76,7 @@ public class MyJFinalConfig extends JFinalConfig{
 	 * 此方法用于：配置JFinal的Handler（处理器）
 	 */
 	public void configHandler(Handlers me){
-		me.add(new ResourceHandler(".htm"));
+		me.add(new ResourceHandler(".html"));
 	}
 	
 	public static C3p0Plugin createC3p0Plugin(){

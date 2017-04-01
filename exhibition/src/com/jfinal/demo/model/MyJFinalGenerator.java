@@ -33,12 +33,12 @@ public class MyJFinalGenerator {
 		// 创建生成器
 		Generator gernerator = new Generator(getDataSource(), baseModelPackageName, baseModelOutputDir, modelPackageName, modelOutputDir);
 		// 添加不需要生成的表名
-		gernerator.addExcludedTable("sys_code");
+		//gernerator.addExcludedTable("sys_code");
 		gernerator.addExcludedTable("sys_menu");
 		// 设置是否在 Model 中生成 dao 对象
 		gernerator.setGenerateDaoInModel(true);
 		// 设置是否生成字典文件
-		gernerator.setGenerateDataDictionary(false);
+		gernerator.setGenerateDataDictionary(true);
 		// 设置需要被移除的表名前缀用于生成modelName。例如表名 "osc_user"，移除前缀 "osc_"后生成的model名为 "User"而非 OscUser
 		gernerator.setRemovedTableNamePrefixes("sys_");
 		// 生成
