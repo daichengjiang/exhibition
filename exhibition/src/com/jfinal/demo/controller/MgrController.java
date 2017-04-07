@@ -78,5 +78,19 @@ public class MgrController extends Controller {
 		renderCaptcha();
 	}
 	
-	
+	/**
+	 * 视图跳转
+	 */
+	public void view(){
+		//获取视图名称
+		String view = getPara("view");
+		//跳转到重置密码页面
+		if ("restpwd".equals(view)) {
+			render("restpwd.jsp");
+		}
+		//跳转到个人资料页面
+		if ("profile".equals(view)) {
+			render("profile.jsp");
+		}
+	}
 }

@@ -64,7 +64,7 @@
 		<div class="navbar-container" id="navbar-container">
 			<div class="navbar-header pull-left">
 				<a href="#" class="navbar-brand"> <small> <i
-						class="icon-leaf"></i> 后台管理系统
+						class="icon-film"></i> Shufty
 				</small>
 				</a>
 				<!-- /.brand -->
@@ -226,10 +226,10 @@
 
 						<ul
 							class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-							<li><a href="#"> <i class="icon-cog"></i> 设置
+							<li><a href="javascript:show_view('restpwd');"> <i class="icon-cog"></i> 重置密码
 							</a></li>
 
-							<li><a href="#"> <i class="icon-user"></i> 个人资料
+							<li><a href="javascript:show_view('profile');"> <i class="icon-user"></i> 个人资料
 							</a></li>
 
 							<li class="divider"></li>
@@ -241,6 +241,7 @@
 				<!-- /.ace-nav -->
 			</div>
 			<!-- /.navbar-header -->
+			<jsp:include page="time.jsp"></jsp:include>
 		</div>
 		<!-- /.container -->
 	</div>
@@ -1956,6 +1957,21 @@
 					});
 
 		})
+		
+		//获取项目根路径
+		var basePath = '${basePath}';
+		
+		//跳转到指定视图
+		function show_view(v){
+			//设置访问视图路径
+			var url = basePath + "mgr/view.html?view=" + v;
+			//发起请求
+			$.post(url,function(data){
+				//填充内容
+				$(".main-content").html(data);
+			});
+		}
+		
 	</script>
 </body>
 </html>
