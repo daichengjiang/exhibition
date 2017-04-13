@@ -50,6 +50,7 @@
 		<script src="ace/assets/js/html5shiv.js"></script>
 		<script src="ace/assets/js/respond.min.js"></script>
 		<![endif]-->
+		
 </head>
 
 <body>
@@ -1657,27 +1658,8 @@
 
 	<!-- basic scripts -->
 
-	<!--[if !IE]> -->
-
-	<script
-		src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-	<!-- <![endif]-->
-
-	<!--[if IE]>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<![endif]-->
-
-	<!--[if !IE]> -->
-
-	<script type="text/javascript">
-		window.jQuery
-				|| document
-						.write("<script src='ace/assets/js/jquery-2.0.3.min.js'>"
-								+ "<"+"script>");
-	</script>
-
-	<!-- <![endif]-->
+	<!-- <script src='ace/assets/js/jquery-2.0.3.min.js'> </script> -->
+	<script src='ace/assets/js/jquery-1.10.2.min.js'> </script>
 
 	<!--[if IE]>
 <script type="text/javascript">
@@ -1714,6 +1696,10 @@
 	<script src="ace/assets/js/ace-elements.min.js"></script>
 	<script src="ace/assets/js/ace.min.js"></script>
 
+	<script src="js/layer-v3.0.3/layer.js" ></script>
+	<script type="text/javascript">
+		var mylayer = layer;
+	</script>
 	<!-- inline scripts related to this page -->
 
 	<script type="text/javascript">

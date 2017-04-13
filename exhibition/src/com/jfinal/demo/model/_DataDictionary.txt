@@ -10,6 +10,18 @@ Table: sys_classify
  createTime   | DATETIME(19) | NO   |     |         |         
 --------------+--------------+------+-----+---------+---------
 
+Table: sys_operatelog
+----------------+--------------+------+-----+---------+---------
+ Field          | Type         | Null | Key | Default | Remarks 
+----------------+--------------+------+-----+---------+---------
+ id             | INT(10)      | NO   | PRI |         | 操作日志ID  
+ operateType    | VARCHAR(64)  | NO   |     |         | 操作日志类型  
+ operateContent | VARCHAR(255) | NO   |     |         | 操作日志内容  
+ operateTime    | DATETIME(19) | NO   |     |         | 操作时间    
+ operateIP      | VARCHAR(255) | NO   |     |         | 操作IP    
+ operator       | VARCHAR(255) | NO   |     |         | 操作者     
+----------------+--------------+------+-----+---------+---------
+
 Table: sys_picture
 ------------+--------------+------+-----+---------+---------
  Field      | Type         | Null | Key | Default | Remarks 

@@ -6,7 +6,12 @@ import com.jfinal.common.Constant;
 import com.jfinal.demo.controller.MgrController;
 import com.jfinal.demo.model.User;
 
-public class AuthInterceptor implements Interceptor {
+/**
+ * ºóÌ¨µÇÂ¼À¹½ØÆ÷
+ * @author admin
+ *
+ */
+public class MgrLoginInterceptor implements Interceptor {
 
 	@Override
 	public void intercept(Invocation inv) {

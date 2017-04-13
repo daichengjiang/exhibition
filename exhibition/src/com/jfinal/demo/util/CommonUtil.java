@@ -1,8 +1,14 @@
 package com.jfinal.demo.util;
 
+import java.security.MessageDigest;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
+
+import com.jfinal.common.Constant;
+import com.jfinal.demo.model.User;
 
 public class CommonUtil {
 	
@@ -32,4 +38,44 @@ public class CommonUtil {
 			return request.getRemoteAddr();
 		}
 	}
+	
+	
+    /**
+     * 根据算法对字符串加密
+     * @param 加密的字符串
+     * @param 算法
+     * @return 加密后的字符串
+     */
+    public static String encodePassword(String password, String algorithm) {
+        byte[] unencodedPassword = password.getBytes();
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance(algorithm);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return password;
+        }
+        md.reset();
+        md.update(unencodedPassword);
+        byte[] encodedPassword = md.digest();
+        StringBuffer buf = new StringBuffer();
+
+        for (int i = 0; i < encodedPassword.length; i++) {
+            if ((encodedPassword[i] & 0xff) < 0x10) {
+                buf.append("0");
+            }
+            buf.append(Long.toString(encodedPassword[i] & 0xff, 16));
+        }
+        return buf.toString();
+    }
+    
+    /**
+     * 获取session中在线用户
+     * @param session
+     * @return
+     */
+    public static User getCurrentUser(HttpSession session){
+    	return (User)session.getAttribute(Constant.CURRENT_USER);
+    }
+    
 }

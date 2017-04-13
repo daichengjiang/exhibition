@@ -17,6 +17,7 @@ public class _MappingKit {
 
 	public static void mapping(ActiveRecordPlugin arp) {
 		arp.addMapping("sys_classify", "classifyId", Classify.class);
+		arp.addMapping("sys_operatelog", "id", Operatelog.class);
 		arp.addMapping("sys_picture", "picId", Picture.class);
 		arp.addMapping("sys_user", "id", User.class);
 	}

@@ -171,7 +171,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<script type="text/javascript" src="js/layer-v3.0.3/layer.js" ></script>
 
-	<script type="text/javascript" src="js/util.js" ></script>
+	<script type="text/javascript" src="js/login.js" ></script>
 
 	<script type="text/javascript">
 		if ("ontouchend" in document)

@@ -9,7 +9,7 @@
 	</script>
 
 	<ul class="breadcrumb">
-		<li><i class="icon-home home-icon"></i> <a href="#">首页</a></li>
+		<li><i class="icon-home home-icon"></i> <a href="${basePath }mgr/index.html">首页</a></li>
 		<li class="active">个人资料</li>
 	</ul>
 	<!-- .breadcrumb -->
@@ -27,15 +27,6 @@
 </div>
 
 <div class="page-content">
-	<div class="page-header">
-		<h1>
-			User Profile Page <small> <i class="icon-double-angle-right"></i>
-				3 styles with inline editable feature
-			</small>
-		</h1>
-	</div>
-	<!-- /.page-header -->
-
 	<div class="row">
 		<div class="col-xs-12">
 			<!-- PAGE CONTENT BEGINS -->
@@ -46,25 +37,9 @@
 						<i class="icon-remove"></i>
 					</button>
 
-					<i class="icon-umbrella bigger-120 blue"></i> Click on the image
-					below or on profile fields to edit them ...
+					<i class="icon-umbrella bigger-120 blue"></i> 点击下面的头像或编辑个人信息来改变它们 ...
 				</div>
 
-				<div class="pull-right">
-					<span class="green middle bolder">Choose profile: &nbsp;</span>
-
-					<div class="btn-toolbar inline middle no-margin">
-						<div data-toggle="buttons" class="btn-group no-margin">
-							<label class="btn btn-sm btn-yellow active"> <span
-								class="bigger-110">1</span> <input type="radio" value="1" />
-							</label> <label class="btn btn-sm btn-yellow"> <span
-								class="bigger-110">2</span> <input type="radio" value="2" />
-							</label> <label class="btn btn-sm btn-yellow"> <span
-								class="bigger-110">3</span> <input type="radio" value="3" />
-							</label>
-						</div>
-					</div>
-				</div>
 			</div>
 
 			<div class="hr dotted"></div>

@@ -34,24 +34,20 @@ $(document).ready(function(){
 		//获取表单元素值
 		var data = $("#login_frm").serialize();
 		//登录ajax方法
-		$.ajax({
-			type:"post",
-			url:basePath + "mgr/logon.html",
-			data:data,
-			success:function(ret){
-				console.log(ret);
-				if(ret.retCode == 100){
-					window.location.href = basePath + "mgr/index.html";
-				}else{
-					$(".ca_img").trigger("click");
-					
-					$("#password").val("").focus();
-					$("#captcha").val("");
-					
-				}
-				layer.msg(ret.retMsg);
+		$.post(basePath + 'mgr/logon.html', data, function(data){
+			if(data.retCode == 6){
+				window.location.href = basePath + "mgr/index.html";
+			}else{
+				$(".ca_img").trigger("click");
+				
+				$("#password").val("").focus();
+				$("#captcha").val("");
 			}
-		});
+			layer.msg(data.retMsg, {
+				icon : data.retCode,
+				skin : 'layer-ext-moon'
+			});
+		})
 	});
 	
 	/**

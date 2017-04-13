@@ -6,10 +6,9 @@ import com.jfinal.config.Interceptors;
 import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
-import com.jfinal.demo.controller.IndexController;
+import com.jfinal.demo.controller.FrontController;
 import com.jfinal.demo.controller.MgrController;
 import com.jfinal.demo.handler.ResourceHandler;
-import com.jfinal.demo.interceptor.AuthInterceptor;
 import com.jfinal.demo.model._MappingKit;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
@@ -37,7 +36,7 @@ public class MyJFinalConfig extends JFinalConfig{
 		//me.add(new FrontRoutes());
 		
 		//项目根访问路径
-		me.add("/", IndexController.class);
+		me.add("/", FrontController.class);
 		
 		//第三个参数为视图存放路径
 		me.add("/mgr", MgrController.class,"WEB-INF/mgr/");
@@ -69,7 +68,7 @@ public class MyJFinalConfig extends JFinalConfig{
 	 * Interceptor配置粒度分为：Global、Class、Method三个层次
 	 */
 	public void configInterceptor(Interceptors me){
-		me.add(new AuthInterceptor());
+		//me.add(new MgrLoginInterceptor());
 	}
 	
 	/**
